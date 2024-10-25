@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Form Builder</title>
+    <link rel="stylesheet" href="./Assets/Style.css">
+</head>
+<body>
+
+<h2>Dynamic Form Builder</h2>
+
+<div>
+    <h3>Create A Form With Fields</h3>
+    
+    
+    
+    <button onclick="addRow()">Add Row</button>
+    <button onclick="saveJson()">Save JSON</button>
+    
+    <button id="loadJsonButton" onclick="loadJson()">Load JSON</button>
+
+    <input  type="file" id="fileInput" accept=".json" onchange="loadJson()">
+    
+    <button onclick="generateForm()">Generate Form</button>
+    
+    <label for="formSelect">Select Existing Form:</label>
+    <select id="formSelect" onchange="loadSelectedForm()">
+        <option value="">-- Select Form --</option>
+    </select>
+</div><br/>
+<table>
+
+  <label for="formTitle">Form Title:</label>
+    <input type="text" id="formTitle" placeholder="Enter form title"><br/><br/>
+    
+  <thead>
+      <tr>
+          <th>Field Name</th>
+          <th>Field Type</th>
+          <th>Mandatory</th>
+          <th>Options</th>
+          <th>Action</th>
+      </tr>
+  </thead>
+  <tbody id="tableBody"></tbody>
+</table>
+
+<div id="generatedForm"></div>
+
+<div id="submissions"></div>
+
+<script src="./Assets/App.js"></script>
+</body>
+</html>
